@@ -88,7 +88,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
            'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'github_actions',
+           'NAME': 'github_workflow_db',
            'USER': 'postgres',
            'PASSWORD': 'postgres',
            'HOST': '127.0.0.1',
