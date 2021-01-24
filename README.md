@@ -26,17 +26,6 @@
 ```
 
 
-To run migrations
-```
-docker-compose exec web python manage.py makemigrations
-docker-compose exec web python manage.py migrate
-```
-
-To access database
-```
-docker-compose exec db psql --username=hello_django --dbname=hello_django_dev
-```
-
 To Build Image
 ```
 docker-compose build
@@ -71,6 +60,18 @@ docker rm -vf $(docker ps -a -q)
 To delete all the images
 ```
 docker rmi -f $(docker images -a -q)
+```
+
+
+To run migrations
+```
+docker-compose exec web python manage.py makemigrations
+docker-compose exec web python manage.py migrate
+```
+
+To access database
+```
+docker-compose exec db psql --username=hello_django --dbname=hello_django_dev
 ```
 
 To update permission .sh file
