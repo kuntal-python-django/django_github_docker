@@ -75,26 +75,13 @@ WSGI_APPLICATION = 'hello_django.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE"),
-        "NAME": os.environ.get("POSTGRES_DB"),
-        "USER": os.environ.get("POSTGRES_USER"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-        "HOST": os.environ.get("SQL_HOST"),
-        "PORT": os.environ.get("SQL_PORT"),
+        "NAME": os.environ.get("POSTGRES_DB", 'github_workflow_db'),
+        "USER": os.environ.get("POSTGRES_USER", 'postgres'),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", 'postgres'),
+        "HOST": os.environ.get("SQL_HOST", '127.0.0.1'),
+        "PORT": os.environ.get("SQL_PORT", '5432'),
     }
 }
-
-# For Testing in Github Action
-if os.environ.get('GITHUB_WORKFLOW'):
-    DATABASES = {
-        'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'github_workflow_db',
-           'USER': 'postgres',
-           'PASSWORD': 'postgres',
-           'HOST': '127.0.0.1',
-           'PORT': '5432',
-        }
-    }
 
 
 # Password validation
