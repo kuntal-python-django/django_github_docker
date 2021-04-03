@@ -82,3 +82,5 @@ chmod +x entrypoint.sh
 [For More like Nginx and Gunicon Setup](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
 [Deploy Your container in AWS](https://testdriven.io/blog/django-docker-https-aws/)
+
+[Official Docker Guide On Django](https://docs.docker.com/compose/django/)
